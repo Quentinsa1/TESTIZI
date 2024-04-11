@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un produit</title>
+</head>
+<body>
+    <h1>Modifier un produit</h1>
+    <form action="/product/edit" method="post">
+        <input type="hidden" name="id" value="<?php echo $product->getId(); ?>">
+        <label for="name">Nom du produit</label>
+        <input type="text" id="name" name="name" value="<?php echo $product->getName(); ?>" required>
+        <label for="priceHt">Prix HT</label>
+        <input type="number" id="priceHt" name="priceHt" value="<?php echo $product->getPriceHt(); ?>" required>
+        <input type="hidden" name="creationDate" value="<?php echo $product->getCreationDate(); ?>">
+        <input type="hidden" name="dateUpdate" value="<?php echo date('Y-m-d H:i:s'); ?>">
+        <button type="submit">Modifier</button>
+    </form>
+</body>
+</html>
